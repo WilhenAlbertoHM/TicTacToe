@@ -30,6 +30,9 @@ public class game_board {
                 { '-', '+', '-', '+', '-' },
                 { ' ', '|', ' ', '|', ' ' } };
 
+        // Visual representation of the board before start.
+        printBoard(board);
+
         // Loop that allows user and computer to play the game until a win, defeat, or
         // draw is announced.
         while (true) {
