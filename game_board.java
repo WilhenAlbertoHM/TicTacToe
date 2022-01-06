@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 */
 
-public class game_board {
+public class board_game {
     // Keep track of player and cpu's positions.
     static ArrayList<Integer> playerPos = new ArrayList<>();
     static ArrayList<Integer> cpuPos = new ArrayList<>();
