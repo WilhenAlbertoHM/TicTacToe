@@ -1,5 +1,8 @@
-# TicTacToe.java
-My first project in Java, where I create a simple Tic Tac Toe game using user input.
-The input consists of numbers, ranging from 1 to 9. This was inspired by YouTube videos and the purpose of
-this is to learn to create projects on my own to further my knowledge in programming, whether
-it is in Java, Python, C, or other programming languages that I'm interested to learn.
+# Tic Tac Toe
+
+## Inspired by YouTube videos regarding the Tic Tac Toe board game.
+The programs assimilates the board game, consisting of user input in the terminal. Then, the user will get asked to type a number from 1 to 9 and,
+depending on the number, the user will place a 'X' on the number, and the cpu will automatically place 'O' randomly.
+The game board has three rows and three columns, each "slot" corresponding the numbers from 1 to 9. The program will ask the user to
+put a number until the game ends in a win, defeat, or draw. Also, the user will play against the computer and this program can be
+improved if AI is implemented. However, this is a simple program.
