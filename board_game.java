@@ -1,5 +1,6 @@
-import java.util.*;
+package TicTacToe;
 
+import java.util.*;
 public class board_game {
     // Keep track of player and cpu's positions.
     static ArrayList<Integer> playerPos = new ArrayList<>();
@@ -21,22 +22,24 @@ public class board_game {
 
         // Loop that allows user and computer to play the game until a win, defeat, or
         // draw is announced.
+        Scanner scan = new Scanner(System.in);
         while (true) {
 
             // Receives user input.
-            Scanner scan = new Scanner(System.in);
             System.out.print("Enter your placement (1-9) = ");
 
             // User's turn, making sure that user puts the correct input and position.
             int userNum = scan.nextInt();
             while (userNum < 1 || userNum > 9) {
                 System.out.println("Selection out of bounds!");
+                printBoard(board);
                 System.out.print("Enter your placement (1-9) = ");
                 userNum = scan.nextInt();
             }
 
             while (playerPos.contains(userNum) || cpuPos.contains(userNum)) {
                 System.out.println("Position taken! Enter a correct position");
+                printBoard(board);
                 System.out.print("Enter your placement (1-9) = ");
                 userNum = scan.nextInt();
             }
@@ -71,6 +74,7 @@ public class board_game {
             // Print board.
             printBoard(board);
         }
+        scan.close();
     }
 
     /*
@@ -106,35 +110,17 @@ public class board_game {
         // Checks each number, from 1 to 9, and places corresponding symbol to that
         // number that represents the position.
         switch (pos) {
-            case 1:
-                board[0][0] = symbol;
-                break;
-            case 2:
-                board[0][2] = symbol;
-                break;
-            case 3:
-                board[0][4] = symbol;
-                break;
-            case 4:
-                board[2][0] = symbol;
-                break;
-            case 5:
-                board[2][2] = symbol;
-                break;
-            case 6:
-                board[2][4] = symbol;
-                break;
-            case 7:
-                board[4][0] = symbol;
-                break;
-            case 8:
-                board[4][2] = symbol;
-                break;
-            case 9:
-                board[4][4] = symbol;
-                break;
-            default:
-                break;
+            case 1 -> board[0][0] = symbol;
+            case 2 -> board[0][2] = symbol;
+            case 3 -> board[0][4] = symbol;
+            case 4 -> board[2][0] = symbol;
+            case 5 -> board[2][2] = symbol;
+            case 6 -> board[2][4] = symbol;
+            case 7 -> board[4][0] = symbol;
+            case 8 -> board[4][2] = symbol;
+            case 9 -> board[4][4] = symbol;
+            default -> {
+            }
         }
     }
 
@@ -151,7 +137,7 @@ public class board_game {
         List<Integer> cross1 = Arrays.asList(1, 5, 9);
         List<Integer> cross2 = Arrays.asList(3, 5, 7);
 
-        List<List> winning = new ArrayList<List>();
+        List<List> winning = new ArrayList<>();
         winning.add(topRow);
         winning.add(midRow);
         winning.add(botRow);
